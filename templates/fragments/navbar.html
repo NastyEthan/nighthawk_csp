@@ -112,6 +112,14 @@
                 <input type="checkbox" onclick="darkFunction()" class="form-check-input" id="darkSwitch">
                 <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
             </div>
+            <!-- Display user logged in -->
+            <div class="px-3 text-dark">
+                <p>{{current_user.name}}</p> {# current_user is a function that gets name #}
+            </div>
+        </div>
+        <!-- Log In/Log Out -->
+        <div class="px-3 text-dark">
+            <button type="button" onclick="window.location.href='{{url_for('crud.crud_logout')}}';">Log Out</button>
         </div>
 
         {% block navbar_script %}
