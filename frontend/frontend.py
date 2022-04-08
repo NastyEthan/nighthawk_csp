@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from flask_login import login_required
 
 app_frontend = Blueprint('frontend', __name__,
                          url_prefix='/frontend',
@@ -18,5 +19,6 @@ def life():
 
 
 @app_frontend.route('/snake')
+@login_required  # Flask-Login uses this decorator to restrict acess to logged in users
 def snake():
     return render_template("snake.html")
